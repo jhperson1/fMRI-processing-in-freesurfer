@@ -4,7 +4,7 @@ Dear User,
 
 Hi, I’m Jess. I worked at the Caramazza Lab with the postdoctoral fellow Ella Striem-Amit for summer of 2017. Over the course of the summer, I worked largely with freesurfer to conduct preprocessing on a sample of blind and sighted subjects with structural and functional MRI scans. Some analysis I implemented included dicom to NIFTI conversion, recon-all anatomical reconstruction and manual correction, functional scan preprocessing, region definition (segmentation transfer), and time course extraction. In this document, along with a main focus on freesurfer, I mention important notes for operating the terminal (using bash scripts) along with some scripts in MATLAB.
 
-Look to the following document for an overview of these functions and refer to my lab manuals, my presentation, my weekly summaries for a sense of when I implemented what (and thus what time ranges in my lab manual you could look towards to find the information you want).
+Look to the following document for an overview of these functions, my presentation, my weekly summaries for a sense of when I implemented what. If you're working with the Caramazza Lab, I still have my lab manuals for reference.
 
 Email me at: jessica_huang@college.harvard.edu or jess.huang.98@gmail.com with questions.
 
@@ -76,44 +76,6 @@ I used FSL, which is a GUI and command line program. I used python to generate a
 
 
 **Important Pieces of Information:**
-
-* Data Bugs *
-
-Summarize the Abnormalities of Subjects
-Anatomical Abnormalities
-Table of anatomical abnormalities
-Subject ID
-Anatomical Abnormality
-S02_WAH_mprage
-Optic chiasm still included in orbital frontal cortex
-Missing small part of the left anterior temporal lobe (ATL)
-Too much GM in the RH somatosensory cortex
-S03_QYR_mprage
-Anterior cingulate cortex missing from GM
-S04_ZFJ_mprage
-right temporal pole is not fully included in the GM
-S07_MJ_mprage
-Medial prefrontal lobe, anterior cingulate cortex not fully included in GM
-S08_DX_mprage
-Anterior temporal lobe not fully included in GM
-Top and medial frontal lobes both not fully included in GM
-S09_LQ_mprage
-Frontal lobe not fully included in GM
-B211_mprage
-Slightly enlarged ventricles
-
-Functional Abnormalities
-DICOM Files Resistant to NIFTI-fication: I had trouble converting S202’s raw dicom files into a nifti file without running into an error with freesurfer’s mri_convert function
-Motion Correction:
--   Beware of Jerky Motion:
--   B105 had a jump of ~0.6mm in motion
--   B104 had a jump of ~0.6mm in motion
--   Removing Timepoints: S201 had two major > 1mm jumps of motion @ 2 timepoints therefore, timepoints 37, 38, 39, 164, 165, 166 (TR 1 - 240) were removed
--   Software Error: B110 displays very irregular (head position fluctuates from one position to another every TR for the middle 2/3rd’s of the run) in Freesurfer but seems fine in BrainVoyager - this subject was removed from analysis and from sessid file needed to run preprocessing commands on all subjects
-Anatomically Labeled ROIs:
--   The Medial Wall of both the left and right hemispheres wasn’t successfully converted to a mask, and thus no time course was successfully extracted for most subjects
--   As a result, I’ve removed the medial wall from our ROI list
-
 
 * On Extracting Time Courses*:
 
