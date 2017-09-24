@@ -135,6 +135,7 @@ Convert TC files into a Matrix: Jess/build_TC_mat.m
 -   ROI_legend = n * 2 (n = # ROIs, 1st column = #, 2nd column = ROI)
 -   subj_legend = n * 2 (n = # subjs, 1st column = #, 2nd column = subj)
 -   Pass the resulting file into into TimeCourseStats1_semi_automated.m
+
 [Be careful to check parameters] Convert TC_mat into Meaningful Correlations: Jess/TimeCourseStats1_semi_automated.m
 [not fully automated] Create Histograms to 1. Plot Each Subject’s Correlations or 2. Plot Regional Correlations Across Subjects: Jess/scripts/histograms.m
 [not fully automated] Calculate Average Rank and Correlation to V1 For all Regions Across Subjects: Jess/scripts/averages.m
